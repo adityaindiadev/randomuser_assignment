@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, Modal } from 'react-native';
-import { dimensions } from '../../../utils/helpers';
+import { dimensions } from '../../utils/helpers';
 import LoaderStyles from './Loader.styles';
 
 

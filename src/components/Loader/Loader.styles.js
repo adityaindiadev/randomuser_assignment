@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { dimensions } from "../../../utils/helpers";
+import { dimensions } from "../../utils/helpers";
 
 const LoaderStyles = StyleSheet.create({
     container:{

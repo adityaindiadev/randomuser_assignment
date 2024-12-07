@@ -31,9 +31,9 @@ const UserListScreenStyles = StyleSheet.create({
         height: 40,
         borderColor: "#ccc",
         borderWidth: 1,
-        borderRadius: 8,
+        // borderRadius: 8,
         paddingHorizontal: 10,
-        marginBottom: 16,
+        // marginBottom: 0,
     },
     noResults: {
         textAlign: "center",
