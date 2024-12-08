@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const UserListScreenStyles = StyleSheet.create({
+const userListScreenStyles = StyleSheet.create({
     container: {
         flex: 1,
         // alignItems: 'center',
@@ -33,6 +33,7 @@ const UserListScreenStyles = StyleSheet.create({
         borderWidth: 1,
         // borderRadius: 8,
         paddingHorizontal: 10,
+        color: "#666"
         // marginBottom: 0,
     },
     noResults: {
@@ -43,4 +44,4 @@ const UserListScreenStyles = StyleSheet.create({
     }
 })
 
-export default UserListScreenStyles
+export default userListScreenStyles

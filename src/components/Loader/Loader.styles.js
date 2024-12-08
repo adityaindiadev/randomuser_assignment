@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { dimensions } from "../../utils/helpers";
 
-const LoaderStyles = StyleSheet.create({
+const loaderStyles = StyleSheet.create({
     container:{
         elevation: 3,
         position: 'absolute',
@@ -14,4 +14,4 @@ const LoaderStyles = StyleSheet.create({
     }
 })
 
-export default LoaderStyles
+export default loaderStyles

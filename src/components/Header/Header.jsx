@@ -1,22 +1,22 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import HeaderStyles from "./Header.styles";
+import headerStyles from "./Header.styles";
 
 const Header = ({ screenName = '', isLoading = false }) => {
     const navigation = useNavigation();
-
+    const canGoBack = navigation.canGoBack();
     return (
-        <View style={HeaderStyles.headerContainer}>
-            <TouchableOpacity onPress={() => navigation.goBack()} style={HeaderStyles.backButton}>
-                {/* <Text style={HeaderStyles.backText}>←</Text> */}
-                <Image style={{ height: 25, width: 25,tintColor: 'black' }} source={require('../../assets/images/arrow_right_black.png')}></Image>
+        <View style={headerStyles.headerContainer}>
+            <TouchableOpacity disabled={!canGoBack} onPress={() => navigation.goBack()} style={headerStyles.backButton}>
+                {canGoBack ? <Image style={headerStyles.backButtonImg} source={require('../../assets/images/arrow_right_black.png')} /> :
+                    <View style={headerStyles.backButtonPlaceholder} />}
             </TouchableOpacity>
-            <Text style={HeaderStyles.screenName}>{screenName}</Text>
-            <View style={HeaderStyles.loaderContainer}>
-            {isLoading && (
-                <ActivityIndicator size="small" color="#007bff" style={HeaderStyles.loader} />
-            )}
+            <Text style={headerStyles.screenName}>{screenName}</Text>
+            <View style={headerStyles.loaderContainer}>
+                {isLoading && (
+                    <ActivityIndicator size="small" color="#007bff" style={headerStyles.loader} />
+                )}
             </View>
         </View>
     );

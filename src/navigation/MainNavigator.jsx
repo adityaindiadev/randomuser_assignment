@@ -8,8 +8,18 @@ import UserDetailsScreen from '../screens/UserDetails/UserDetailsScreen';
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => {
+
+  const linking = {
+    prefixes: ["randomuser://"],
+    config: {
+      screens: {
+        UserListScreen: "user-list"
+      },
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator
        screenOptions={{ headerShown: false, }} initialRouteName="StartScreen"
        >

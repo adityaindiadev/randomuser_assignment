@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const UserDetailsScreenStyles = StyleSheet.create({
+const userDetailsScreenStyles = StyleSheet.create({
     container: {
         flex: 1,
     },
@@ -11,7 +11,8 @@ const UserDetailsScreenStyles = StyleSheet.create({
     text: {
         fontSize: 18,
         marginBottom: 8,
+        color:"#333"
     },
 });
 
-export default UserDetailsScreenStyles
+export default userDetailsScreenStyles

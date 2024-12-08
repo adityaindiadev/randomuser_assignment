@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Alert, FlatList, TextInput, SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import UserListScreenStyles from './UserListScreen.styles'
+import userListScreenStyles from './UserListScreen.styles'
 import { useNavigation } from '@react-navigation/native'
 import { getAPI } from '../../webAPI/api'
 import Loader from '../../components/Loader/Loader'
@@ -8,11 +8,11 @@ import { AStorage } from '../../utils/helpers'
 import Header from '../../components/Header/Header'
 
 const renderItem = ({ item, onPress }) => (
-    <TouchableOpacity onPress={() => onPress(item)} style={UserListScreenStyles.row}>
-        <Text style={UserListScreenStyles.nameText}>
+    <TouchableOpacity onPress={() => onPress(item)} style={userListScreenStyles.row}>
+        <Text style={userListScreenStyles.nameText}>
             {item?.name.first} {item?.name?.last}
         </Text>
-        <Text style={UserListScreenStyles.ageText}>Age: {item?.dob?.age}</Text>
+        <Text style={userListScreenStyles.ageText}>Age: {item?.dob?.age}</Text>
     </TouchableOpacity>
 );
 
@@ -110,20 +110,21 @@ const UserListScreen = () => {
 
 
     return (
-        <SafeAreaView style={UserListScreenStyles.container}>
+        <SafeAreaView style={userListScreenStyles.container}>
             <Header screenName='User List' isLoading={loading} />
             <TextInput
-                style={UserListScreenStyles.searchInput}
+                style={userListScreenStyles.searchInput}
                 placeholder="Search by name or email"
                 value={searchText}
                 onChangeText={handleSearch}
+                placeholderTextColor={"#999"}
             />
             <FlatList
                 data={filteredUsers}
                 keyExtractor={(item, index) => item?.login?.uuid || index?.toString()}
                 renderItem={({ item, _ }) => renderItem({ item, onPress: listOnPress })}
-                contentContainerStyle={UserListScreenStyles.listContainer}
-                ListEmptyComponent={<Text style={UserListScreenStyles.noResults}>No results found</Text>}
+                contentContainerStyle={userListScreenStyles.listContainer}
+                ListEmptyComponent={<Text style={userListScreenStyles.noResults}>No results found</Text>}
             />
             <Loader isLoader={loading && (users.length === 0)} />
         </SafeAreaView>

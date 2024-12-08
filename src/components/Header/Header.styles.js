@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const HeaderStyles = StyleSheet.create({
+const headerStyles = StyleSheet.create({
     headerContainer: {
         flexDirection: "row",
         alignItems: "center",
@@ -13,6 +13,15 @@ const HeaderStyles = StyleSheet.create({
     },
     backButton: {
         padding: 10,
+    },
+    backButtonImg: {
+        height: 25,
+        width: 25,
+        tintColor: 'black'
+    },
+    backButtonPlaceholder: {
+        height: 25,
+        width: 25,
     },
     backText: {
         fontSize: 20,
@@ -38,4 +47,4 @@ const HeaderStyles = StyleSheet.create({
     },
 });
 
-export default HeaderStyles
+export default headerStyles

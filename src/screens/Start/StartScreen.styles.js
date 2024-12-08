@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const StartScreenStyles = StyleSheet.create({
+const startScreenStyles = StyleSheet.create({
     container:{
         flex: 1,
         alignItems: 'center',
@@ -13,7 +13,12 @@ const StartScreenStyles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderRadius: 50
+    },
+    textColor:{
+        color: "#333",
+        fontSize: 18,
+        fontWeight: "bold",
     }
 })
 
-export default StartScreenStyles
+export default startScreenStyles

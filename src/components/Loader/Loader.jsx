@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, Modal } from 'react-native';
-import { dimensions } from '../../utils/helpers';
-import LoaderStyles from './Loader.styles';
+import loaderStyles from './Loader.styles';
 
 
 const Loader = ({ isLoader = false }) => {
@@ -11,7 +10,7 @@ const Loader = ({ isLoader = false }) => {
     }
 
     return (
-        <View style={LoaderStyles.container}>
+        <View style={loaderStyles.container}>
             <ActivityIndicator size="large" color='#FFF' />
         </View>
     );
