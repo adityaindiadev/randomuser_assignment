@@ -69,7 +69,7 @@ const UserListScreen = () => {
         }
     };
 
-    const listOnPress = (listData) => navigation.navigate("UserDetailsScreen", { user: listData })
+    const listOnPress = (listData) => navigation.navigate("UserDetailsScreen", { user: listData?.email })
 
     const loadDataFromStorage = async () => {
         try {
