@@ -8,13 +8,14 @@ const StartScreen = () => {
 
     useEffect(() => {
       
-        Alert.alert("Hi User", `The deep link URL scheme is 'randomuser://user-list', and it will lead you directly to the 'User List' screen.`)
+        // Alert.alert("Hi User", `The deep link URL scheme is 'randomuser://user-list', and it will lead you directly to the 'User List' screen.`)
       
     }, [])
     
 
     const navigateToUserListScreen = () => {
-        navigation.navigate("UserListScreen")
+        navigation.navigate("First")
+        // navigation.navigate("UserListScreen")
     }
     return (
         <View style={startScreenStyles.container}>
