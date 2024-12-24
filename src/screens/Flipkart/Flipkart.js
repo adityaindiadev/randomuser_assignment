@@ -1,3 +1,5 @@
+// Create a dynamically generated grid based on the rows and columns (e.g., 2x2, 3x3). Clicking on each cell assigns numbers in ascending order, starting from 1. Add a `remove` button which will remove the clicked grids number in reverse order.
+
 import {
   Text,
   SafeAreaView,
