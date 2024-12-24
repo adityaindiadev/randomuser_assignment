@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import UserListScreen from '../screens/UserList/UserListScreen';
 import UserDetailsScreen from '../screens/UserDetails/UserDetailsScreen';
 import First from '../RNPractice/First';
+import Flipkart from '../screens/Flipkart/Flipkart';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const MainNavigator = () => {
         <Stack.Screen name="UserListScreen" component={UserListScreen} />
         <Stack.Screen name="UserDetailsScreen" component={UserDetailsScreen} />
         <Stack.Screen name="First" component={First} />
+        <Stack.Screen name="Flipkart" component={Flipkart} />
       </Stack.Navigator>
     </NavigationContainer>
   );
