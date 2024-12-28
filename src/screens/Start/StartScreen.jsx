@@ -14,8 +14,10 @@ const StartScreen = () => {
     
 
     const navigateToUserListScreen = () => {
-        navigation.navigate("Flipkart")
-        // navigation.navigate("First")
+        // navigation.navigate("Flipkart")
+        // navigation.navigate("FirstClass")
+        navigation.navigate("First")
+
         // navigation.navigate("UserListScreen")
     }
     return (

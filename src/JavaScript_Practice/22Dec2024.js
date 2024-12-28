@@ -1,4 +1,4 @@
-// anonymous function
+// anonymous function IIFE
 // (function (name) {
 //     console.log(name + " is Awesome");
 // })("Aditya")
