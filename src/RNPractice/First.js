@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { company, dummy } from './utils/constants'
 import List from './Components/List'
 import Header from '../components/Header/Header'
-function First() {
+import { useNavigation } from '@react-navigation/native'
+function First(props) {
+    const navigation = useNavigation()
     //special varible
     const [myName, setmyName] = useState("Aditya")
     const [loader, setloader] = useState(false)
@@ -15,6 +17,7 @@ function First() {
         setTimeout(() => {
             setmyName("Yazdan")
         }, 3000);
+        console.log(props?.route?.params);
 
         return () => {
             // console.log("Bye Bye");
@@ -22,6 +25,15 @@ function First() {
         }
     }, [])
     // let name = "Aditya"
+
+    function checkValidation(){
+        if (!formValue.includes("@")) {
+            Alert.alert("Enter valid email")
+        }else{
+            Alert.alert("Good")
+
+        }
+    }
 
     return (
         <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }}>
@@ -34,13 +46,14 @@ function First() {
 
             {/* Form Component TextInput */}
 
-            <TextInput placeholder='Enter Value' style={{ width: '80%', borderColor: 'black', borderWidth: 1, marginTop: 10, height: 30 }}
+            <TextInput placeholder='Enter Email' style={{ width: '80%', borderColor: 'black', borderWidth: 1, marginTop: 10, height: 30 }}
                 // value=''
                 value={formValue}
                 onChangeText={(val) => {
                     // console.log(val);
                     setformValue(val)
                 }}
+                // onBlur={checkValidation}
             />
             <TextInput placeholder='Enter New Value' style={{ width: '80%', borderColor: 'black', borderWidth: 1, marginTop: 10, height: 30 }}
                 // value=''
@@ -68,22 +81,25 @@ function First() {
                     // }
                 }}
             />
-            <TouchableOpacity activeOpacity={0.5} onPressIn={()=>{
-                console.log("just pressed");
-                setbtnColor("green")
-                
+            <TouchableOpacity activeOpacity={0.5} onPressIn={() => {
+                // console.log("just pressed");
+                // setbtnColor("green")
+
+                navigation.navigate("APICall")
+                // checkValidation()
+
             }}
-                onPressOut={()=>{
+                onPressOut={() => {
                     console.log("just leave");
-                setbtnColor("red")
+                    setbtnColor("red")
 
                 }}
-            onPress={() => {
-                // console.log("HI");
-                setformValue("")
-                setnewformValue("")
+                onPress={() => {
+                    // console.log("HI");
+                    // setformValue("")
+                    // setnewformValue("")
 
-            }}>
+                }}>
                 <View style={{ width: 100, height: 50, backgroundColor: btnColor, justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>
                     <Text>{"Click Me"}</Text>
                 </View>

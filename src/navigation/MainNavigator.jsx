@@ -7,6 +7,8 @@ import UserDetailsScreen from '../screens/UserDetails/UserDetailsScreen';
 import First from '../RNPractice/First';
 import Flipkart from '../screens/Flipkart/Flipkart';
 import FirstClass from '../RNPractice/FirstClass';
+import APICall from '../RNPractice/APICall';
+import APICallDetail from '../RNPractice/APICallDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,16 +24,20 @@ const MainNavigator = () => {
   };
 
   return (
-    <NavigationContainer linking={linking}>
+    <NavigationContainer
+    // linking={linking}
+    >
       <Stack.Navigator
-       screenOptions={{ headerShown: false, }} initialRouteName="StartScreen"
-       >
-        <Stack.Screen name="StartScreen"  component={StartScreen} />
+        screenOptions={{ headerShown: false, }} initialRouteName="StartScreen"
+      >
+        <Stack.Screen name="StartScreen" component={StartScreen} />
         <Stack.Screen name="UserListScreen" component={UserListScreen} />
         <Stack.Screen name="UserDetailsScreen" component={UserDetailsScreen} />
         <Stack.Screen name="First" component={First} />
         <Stack.Screen name="Flipkart" component={Flipkart} />
         <Stack.Screen name="FirstClass" component={FirstClass} />
+        <Stack.Screen name="APICall" component={APICall} />
+        <Stack.Screen name="APICallDetail" component={APICallDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
