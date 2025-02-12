@@ -17,6 +17,7 @@ import {
   View,
 } from 'react-native';
 import MainNavigator from './src/navigation/MainNavigator';
+import KeyboardPrac from './src/MyLearning/KeyboardPrac';
 
 
 
@@ -25,7 +26,7 @@ import MainNavigator from './src/navigation/MainNavigator';
 function App(): React.JSX.Element {
   
   return (
-    <MainNavigator/>
+    <KeyboardPrac/>
   );
 }
 
